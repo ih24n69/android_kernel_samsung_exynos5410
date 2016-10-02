@@ -194,6 +194,8 @@ void rv770_pcie_gart_disable(struct radeon_device *rdev)
 	WREG32(MC_VM_MD_L1_TLB0_CNTL, tmp);
 	WREG32(MC_VM_MD_L1_TLB1_CNTL, tmp);
 	WREG32(MC_VM_MD_L1_TLB2_CNTL, tmp);
+	if (rdev->family == CHIP_RV740)
+		WREG32(MC_VM_MD_L1_TLB3_CNTL, tmp);
 	WREG32(MC_VM_MB_L1_TLB0_CNTL, tmp);
 	WREG32(MC_VM_MB_L1_TLB1_CNTL, tmp);
 	WREG32(MC_VM_MB_L1_TLB2_CNTL, tmp);
@@ -781,6 +783,9 @@ static void rv770_gpu_init(struct radeon_device *rdev)
 				       GS_FLUSH_CTL(4) |
 				       ACK_FLUSH_CTL(3) |
 				       SYNC_FLUSH_CTL));
+
+	if (rdev->family != CHIP_RV770)
+		WREG32(SMX_SAR_CTL0, 0x00003f3f);
 
 	if (rdev->family != CHIP_RV770)
 		WREG32(SMX_SAR_CTL0, 0x00003f3f);

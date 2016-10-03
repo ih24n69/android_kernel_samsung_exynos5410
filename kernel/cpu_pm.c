@@ -209,8 +209,10 @@ static int cpu_pm_suspend(void)
 	int ret;
 
 #ifdef CONFIG_SEC_PM
+#ifdef CONFIG_PM_DEBUG
 	if (FLAG_T32_EN)
 		goto out;
+#endif
 #endif
 
 	ret = cpu_pm_enter();

@@ -26,6 +26,7 @@
 #include <mach/regs-pmu.h>
 #include <mach/debug.h>
 
+#ifdef CONFIG_PM_DEBUG
 /* With Trace32 attached debuging, T32 must set FLAG_T32_EN as true. */
 bool FLAG_T32_EN = false;
 
@@ -34,6 +35,7 @@ static int __init t32_attach_enable(char *str)
 	FLAG_T32_EN = true;
 	return 1;
 }
+#endif
 
 __setup("t32_attach_enable", t32_attach_enable);
 
@@ -494,8 +496,10 @@ static int __init armdebug_exynos5_init(void)
 	int i;
 	int ret;
 
+#ifdef CONFIG_PM_DEBUG
 	if (!FLAG_T32_EN)
 		return 0;
+#endif
 
 	if (!soc_is_exynos5410())
 		return -ENODEV;

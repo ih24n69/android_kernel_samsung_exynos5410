@@ -99,6 +99,8 @@ enum COMMON_REG {
 	NR_COMM_REG,
 };
 
+#ifdef CONFIG_PM_DEBUG
 extern bool FLAG_T32_EN;
+#endif
 
 #endif /* __ASM_ARCH_DEBUG_H */

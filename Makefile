@@ -350,7 +350,7 @@ CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 CFLAGS_MODULE   = -munaligned-access -fno-pic
 AFLAGS_MODULE   =
 LDFLAGS_MODULE  = $(LDFLAGS) --strip-debug
-CFLAGS_KERNEL	= -munaligned-access -marm -mtune=cortex-a15 \
+CFLAGS_KERNEL	= -munaligned-access -marm \
 		  -funsafe-math-optimizations -pipe \
 		  -ffunction-sections -fno-asynchronous-unwind-tables
 AFLAGS_KERNEL	=

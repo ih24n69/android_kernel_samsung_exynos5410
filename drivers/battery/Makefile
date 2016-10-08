@@ -3,7 +3,6 @@ obj-$(CONFIG_BATTERY_SAMSUNG)	+= sec_battery.o	\
 
 obj-$(CONFIG_FUELGAUGE_MAX17042)	+= max17042_fuelgauge.o
 obj-$(CONFIG_FUELGAUGE_MAX17048)	+= max17048_fuelgauge.o
-<<<<<<< HEAD
 obj-$(CONFIG_FUELGAUGE_MAX17050)	+= max17050_fuelgauge.o
 
 obj-$(CONFIG_CHARGER_MAX8903)	+= max8903_charger.o

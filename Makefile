@@ -372,7 +372,8 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wno-format-security -Wno-unused \
 		   -fno-delete-null-pointer-checks \
 		   -Wno-tautological-compare -Wno-bool-compare \
-		   -Wno-array-bounds \
+		   -Wno-array-bounds -Wno-discarded-qualifiers \
+		   -Wno-deprecated-declarations \
 		   $(CFLAGS_KERNEL)
 KBUILD_AFLAGS_KERNEL := $(AFLAGS_KERNEL)
 KBUILD_CFLAGS_KERNEL := $(CFLAGS_KERNEL)

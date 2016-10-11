@@ -116,3 +116,26 @@ config ARM_EXYNOS5410_CPUFREQ
 	help
 	  This adds the CPUFreq driver for Samsung EXYNOS5410
 	  SoC.
+
+config SOC_EXYNOS5410_A15_OVERCLOCK
+	bool "Samsung Exynos 5410 big core (A15) overclocking support"
+	depends on EXPERIMENTAL
+	depends on ARCH_EXYNOS5 && SOC_EXYNOS5410
+	depends on MACH_UNIVERSAL5410
+	default n
+	help
+	  Say Y here to use overclocked frequencies on Exynos 5410 big CPU.
+	  May cause unexpected behavior like random freezes and sudden restarts.
+
+	  If in doubt or if you want to compile a stable kernel, say N.
+
+config SOC_EXYNOS5410_A7_OVERCLOCK
+	bool "Samsung Exynos 5410 LITTLE core (A7) overclocking support"
+	depends on EXPERIMENTAL
+	depends on ARCH_EXYNOS5 && SOC_EXYNOS5410
+	depends on MACH_UNIVERSAL5410
+	default n
+	  Say Y here to use overclocked frequencies on Exynos 5410 LITTLE CPU.
+	  May cause unexpected behavior like random freezes and sudden restarts.
+
+	  If in doubt or if you want to compile a stable kernel, say N.
